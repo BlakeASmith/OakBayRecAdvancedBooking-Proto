@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+service Venue {
+    rpc Book(BookingRequest) returns (BookingRequestResult) {}
+    rpc ValidateLogin(LoginInfo) returns (LoginVerification)
+}
+
+message LoginInfo {
+   string username = 1;
+   string password = 2;
+}
+
+message LoginVerification {
+   bool verified = 1;
+}
+
+message BookingRequest {
+    repeated string sessionIDs = 1;
+    string username = 2;
+    string password = 3;
+}
+
+message BookingRequestResult {
+    map<string, bool> booked = 1;
+    map<string, string> errors = 2;
+}
