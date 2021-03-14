@@ -19,7 +19,7 @@ jobs:
       uses: arduino/setup-protoc@v1
 
     - name: Install grpc_tools
-      run: pip install grpc_tools
+      run: pip install grpcio-tools
 
     - name: Generate Python Stubs
       run: |
