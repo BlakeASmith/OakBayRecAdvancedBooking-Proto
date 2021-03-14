@@ -2,7 +2,7 @@ syntax = "proto3";
 
 service Venue {
     rpc Book(BookingRequest) returns (BookingRequestResult) {}
-    rpc ValidateLogin(LoginInfo) returns (LoginVerification)
+    rpc ValidateLogin(LoginInfo) returns (LoginVerification) {}
 }
 
 message LoginInfo {

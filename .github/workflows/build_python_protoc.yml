@@ -22,5 +22,5 @@ jobs:
       run: |
         mkdir python
         protoc --proto_path=. --python_out=python *.proto
-        ls python
+        ls ./python
 
