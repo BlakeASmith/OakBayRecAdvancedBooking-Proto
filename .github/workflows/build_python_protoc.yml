@@ -18,10 +18,13 @@ jobs:
     - name: Install Protoc
       uses: arduino/setup-protoc@v1
 
+    - name: Install grpc_tools
+      run: pip install grpc_tools
+
     - name: Generate Python Stubs
       run: |
         mkdir python
-        protoc --proto_path=. --python_out=python --grpc_python_out=python *.proto
+        python -m grpc_tools.protoc -I. --python_out=python --grpc_python_out=python *.proto
 
     - name: Commit Back To Repo
       uses: stefanzweifel/git-auto-commit-action@v4
